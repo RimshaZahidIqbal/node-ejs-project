@@ -1,0 +1,25 @@
+<%- include('partials/header') %>
+
+    <main>
+        <div class="overlay">
+            <form method="POST" action="/generate">
+                <input type="number" name="number" placeholder="Enter a number" required />
+                <div class="button-group">
+                    <button type="submit">📋 Generate Table</button>
+                    <a href="/" class="reset-button">🔄 Reset</a>
+                </div>
+            </form>
+
+            <% if (table) { %>
+                <ul>
+                    <% table.forEach(row=> { %>
+                        <li>
+                            <%= row %>
+                        </li>
+                        <% }) %>
+                </ul>
+                <% } %>
+        </div>
+    </main>
+
+    <%- include('partials/footer') %>
