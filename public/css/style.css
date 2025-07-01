@@ -10,10 +10,6 @@ body {
     font-family: 'Comic Sans MS', 'Segoe UI', sans-serif;
     display: flex;
     flex-direction: column;
-    background-image: url("../images/default.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     color: #222;
 }
 
@@ -34,6 +30,10 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url("../images/default.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     padding: 40px 20px;
 }
 
@@ -91,6 +91,16 @@ form button:hover,
     transform: scale(1.05);
 }
 
+form button:disabled {
+    background-color: #ffd6e1;
+    color: #999;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+    opacity: 0.7;
+}
+
+
 ul {
     list-style: none;
     padding: 0;
@@ -119,8 +129,11 @@ li {
 }
 
 @media (max-width: 768px) {
-    body {
-        background-image: url("/images/bg-mobile.jpg");
+    main {
+        background-image: url("../images/bg-mobile.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
     .overlay {

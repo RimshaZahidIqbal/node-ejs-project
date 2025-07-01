@@ -3,9 +3,9 @@
     <main>
         <div class="overlay">
             <form method="POST" action="/generate">
-                <input type="number" name="number" placeholder="Enter a number" required />
+                <input type="number" name="number" id="numberInput" placeholder="Enter a number" required />
                 <div class="button-group">
-                    <button type="submit">📋 Generate Table</button>
+                    <button type="submit" id="generateBtn" disabled> Generate Table</button>
                     <a href="/" class="reset-button">🔄 Reset</a>
                 </div>
             </form>
@@ -23,3 +23,11 @@
     </main>
 
     <%- include('partials/footer') %>
+        <script>
+            const numberInput = document.getElementById("numberInput");
+            const generateBtn = document.getElementById("generateBtn");
+
+            numberInput.addEventListener("input", function () {
+                generateBtn.disabled = !numberInput.value.trim();
+            });
+        </script>
